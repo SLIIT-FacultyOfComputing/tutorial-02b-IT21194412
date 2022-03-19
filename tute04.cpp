@@ -16,6 +16,26 @@ Do not modify the main function.*/
 long Factorial(int no);
 long nCr(int n, int r);
 
+long Factorial(int no){
+    long factorial=1;
+    for(int i=no;i>=1;i--){
+         factorial=factorial*i;
+
+    }
+    return factorial;
+}
+
+long nCr(int n, int r)
+{
+  long Factn = Factorial(n);
+  long Factr = Factorial(r);
+  long Factnr = Factorial(n-r);
+  long ncr= Factn/(Factr * Factnr);
+  return ncr;
+  
+}
+
+
 int main() {
   int n, r;
   std::cout << "Enter a value for n ";
@@ -25,5 +45,5 @@ int main() {
   std::cout << "nCr = ";
   std::cout << nCr(n,r);
   std::cout << std::endl;
-  return 0;
+  
 }
